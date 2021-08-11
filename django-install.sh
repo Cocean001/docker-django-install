@@ -40,7 +40,7 @@ echo "export VISIBLE=now" >> /etc/profile
 green "sshserver配置写入完成"
 
 echo "正在安装环境依赖"
-sudo apt-get install libmysqlclient-dev -y
+sudo apt-get install default-libmysqlclient-dev -y
 sudo apt install libssl-dev -y
 sudo apt-get install default-libmysqlclient-dev -y
 sudo apt install libcrypto++-dev -y
