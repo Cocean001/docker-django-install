@@ -33,6 +33,8 @@ echo "正在配置openssh-server环境"
 apt install sudo -y
 apt install openssh-server -y
 green "sshserver安装完成"
+green "请输入ssh新密码"
+passwd
 
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
 sed 's@sessions*requireds*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
