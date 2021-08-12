@@ -63,7 +63,7 @@ pip3 install django==2.0
 
 echo "即将创建django-project项目文件并将python3全局命令变更为python"
 cd /opt
-django-admin startproject django-project
+django-admin startproject djangoproject
 cd /opt/django-project
 echo "正在配置virtualenv"
 pip3 install virtualenv -y
