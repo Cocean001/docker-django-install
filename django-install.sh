@@ -61,8 +61,9 @@ pip3 install pillow -y
 echo "正在安装django2.0环境"
 pip3 install django==2.0
 
-echo "即将创建django-project文件夹并将python3全局命令变更为python"
-mkdir -p /opt/django-project/env/bin
+echo "即将创建django-project项目文件并将python3全局命令变更为python"
+cd /opt
+django-admin startproject django-project
 cd /opt/django-project
 echo "正在配置virtualenv"
 pip3 install virtualenv -y
