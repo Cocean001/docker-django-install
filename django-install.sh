@@ -69,15 +69,18 @@ pip install -i https://pypi.douban.com/simple pillow
 echo "正在安装django环境"
 pip install -i https://pypi.douban.com/simple django
 
-echo "即将创建django-project项目文件并将python3全局命令变更为python"
+echo "即将创建djangoproject项目文件并将python3全局命令变更为python"
 cd /opt
 django-admin startproject djangoproject
 cd /opt/djangoproject
 echo "正在配置virtualenv"
 pip install -i https://pypi.douban.com/simple virtualenv
 green "virtualenv 安装完成"
-cd env/bin
-source /tmp/django-project/env/bin/activate
+mkdir -p /data/env
+cd /data/env/
+virtualenv --python=/usr/bin/python3 djangoenv
+cd /data/env/djangoenv/bin 
+source activate
 green "全局变更已完成"
 
 echo "即将安装zsh并配置环境"
