@@ -15,15 +15,21 @@ red(){
 
 echo "正在换源并更新apt"
 cat > /etc/apt/sources.list << EOF
-deb http://mirrors.163.com/debian/ buster main non-free contrib
-deb http://mirrors.163.com/debian/ buster-updates main non-free contrib
-deb http://mirrors.163.com/debian/ buster-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ buster main non-free contrib
-deb-src http://mirrors.163.com/debian/ buster-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ buster-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
+deb http://mirrors.aliyun.com/debian bullseye main contrib
+deb-src http://mirrors.aliyun.com/debian bullseye main contrib
 EOF
+
+# 163源会造成ssh无法安装等问题
+# cat > /etc/apt/sources.list << EOF
+# deb http://mirrors.163.com/debian/ buster main non-free contrib
+# deb http://mirrors.163.com/debian/ buster-updates main non-free contrib
+# deb http://mirrors.163.com/debian/ buster-backports main non-free contrib
+# deb-src http://mirrors.163.com/debian/ buster main non-free contrib
+# deb-src http://mirrors.163.com/debian/ buster-updates main non-free contrib
+# deb-src http://mirrors.163.com/debian/ buster-backports main non-free contrib
+# deb http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
+# deb-src http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
+# EOF
 
 apt update -y
 apt-get update -y
