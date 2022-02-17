@@ -60,21 +60,21 @@ apt-get install python3.7-dev -y	#安装python3.7的依赖，如果是其他版�
 green "python3.7环境依赖已安装完成"
 
 echo "正在安装python包-mysqlclient"
-pip3 install mysqlclient -y
+pip install -i https://pypi.douban.com/simple mysqlclient
 green "mysqlclient 已安装完成"
 
 echo "正在安装python包-tesseract-ocr"
 apt install tesseract-ocr -y
-pip3 install pillow -y
-echo "正在安装django2.0环境"
-pip3 install django==2.0
+pip install -i https://pypi.douban.com/simple pillow
+echo "正在安装django环境"
+pip install -i https://pypi.douban.com/simple django
 
 echo "即将创建django-project项目文件并将python3全局命令变更为python"
 cd /opt
 django-admin startproject djangoproject
-cd /opt/django-project
+cd /opt/djangoproject
 echo "正在配置virtualenv"
-pip3 install virtualenv -y
+pip install -i https://pypi.douban.com/simple virtualenv
 green "virtualenv 安装完成"
 cd env/bin
 source /tmp/django-project/env/bin/activate
